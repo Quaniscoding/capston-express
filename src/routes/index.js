@@ -2,7 +2,7 @@ const express = require('express');
 const trangChiTietRoutes = require('./trangChiTietRoutes');
 const trangChuRoutes = require('./trangChuRoutes');
 const trangQuanLyAnhRoutes = require('./trangQuanLyAnh');
-const { trangThemAnhRoutes } = require('./trangThemAnhRoutes');
+const trangThemAnhRoutes = require('./trangThemAnhRoutes');
 const rootRoute = express.Router();
 
 const userRoute = require('./userRoutes');

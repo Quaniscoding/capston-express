@@ -54,7 +54,6 @@ const dangNhap = async (req, res) => {
 const capNhatNguoiDung = async (req, res) => {
     try {
         let id = req.params.id;
-        console.log(id);
         let { email, ho_ten, tuoi, anh_dai_dien } = req.body
         let checkUser = await prisma.nguoi_dung.findFirst({
             where: {

@@ -4,6 +4,7 @@ const { verifyToken } = require('../middlewares/baseToken');
 const userRoute = express.Router();
 //trang đăng ký, đăng nhập
 userRoute.post("/dangKy", dangKy)
-userRoute.get("/dangNhap", dangNhap)
+userRoute.post("/dangNhap", dangNhap)
+//trang cập nhật
 userRoute.put("/capNhat/:id", capNhatNguoiDung)
 module.exports = userRoute;
