@@ -20,7 +20,7 @@ model binh_luan {
 model hinh_anh {
   hinh_id       Int         @id @default(autoincrement())
   ten_hinh      String?     @db.VarChar(255)
-  duong_dan     String?     @db.VarChar(255)
+  duong_dan     String?     @db.MediumText
   mo_ta         String?     @db.VarChar(255)
   tuoi          Int?
   nguoi_dung_id Int?
