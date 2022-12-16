@@ -6,5 +6,5 @@ const userRoute = express.Router();
 userRoute.post("/dangKy", dangKy)
 userRoute.post("/dangNhap", dangNhap)
 //trang cập nhật
-userRoute.put("/capNhat/:id", capNhatNguoiDung)
+userRoute.put("/capNhat/:id", verifyToken, capNhatNguoiDung)
 module.exports = userRoute;
