@@ -34,6 +34,13 @@ const dangNhap = async (req, res) => {
         let checkLogin = await prisma.nguoi_dung.findFirst({
             where: {
                 email
+            },
+            select: {
+                nguoi_dung_id: true,
+                email: true,
+                ho_ten: true,
+                tuoi: true,
+                anh_dai_dien: true
             }
         })
         if (checkLogin) {
