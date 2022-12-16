@@ -19,6 +19,13 @@ const dangKy = async (req, res) => {
             const dataDangKy = await prisma.nguoi_dung.create({
                 data: {
                     email, mat_khau: passWordHash, ho_ten, tuoi, anh_dai_dien
+                },
+                select: {
+                    nguoi_dung_id: true,
+                    email: true,
+                    ho_ten: true,
+                    tuoi: true,
+                    anh_dai_dien: true
                 }
             }
             )
@@ -35,13 +42,6 @@ const dangNhap = async (req, res) => {
             where: {
                 email
             },
-            select: {
-                nguoi_dung_id: true,
-                email: true,
-                ho_ten: true,
-                tuoi: true,
-                anh_dai_dien: true
-            }
         })
         if (checkLogin) {
             let checkPass = bcrypt.compareSync(mat_khau, checkLogin.mat_khau);
