@@ -7,6 +7,17 @@ const getThongTinBinhLuan = async (req, res) => {
         let data = await prisma.binh_luan.findMany({
             where: {
                 hinh_id: Number(id)
+            },
+            select: {
+                hinh_id: true,
+                hinh_anh: { select: { hinh_id: true, ten_hinh: true } },
+                nguoi_dung: {
+                    select: {
+                        nguoi_dung_id: true,
+                        ho_ten: true
+                    }
+                }
+
             }
         })
         if (data != "") {
