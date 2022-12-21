@@ -22,7 +22,6 @@ model hinh_anh {
   ten_hinh      String?     @db.VarChar(255)
   duong_dan     String?     @db.MediumText
   mo_ta         String?     @db.VarChar(255)
-  tuoi          Int?
   nguoi_dung_id Int?
   binh_luan     binh_luan[]
   nguoi_dung    nguoi_dung? @relation(fields: [nguoi_dung_id], references: [nguoi_dung_id], onDelete: NoAction, onUpdate: NoAction, map: "hinh_anh_ibfk_1")
